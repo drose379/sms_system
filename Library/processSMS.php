@@ -39,7 +39,8 @@ public function build($gateway) {
 public function send($address) {
     $message = $this->userInfo["message"];
     $message = wordwrap($message,70,"\n");
-    mail($address,'SMS System',$message);
+    $headers = 'From: sms-system@test.com';
+    mail($address,'<SMS System>',$message,$headers);
 }  
     
 

@@ -12,7 +12,7 @@ $HTML = <<< HTML
        Phone Number: <input type='tel' name='tel' /> <br>
        Please select recipients carrier: <select name='carrier'>
             <option value='Verizon'>Verizon</option>
-            <option value='AT&T'>AT&T</option>
+            <option value='AT&amp;T'>AT&amp;T</option>
             <option value='Sprint'>Sprint</option>
             <option value='Metro PCS'>Metro PCS</option>
         </select> <br>
