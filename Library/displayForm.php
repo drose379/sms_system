@@ -4,9 +4,14 @@ namespace drose379\Library;
 use drose379\View\viewEngine;
 
 class displayForm {
+    
+public function addMessage($message) {
+    $this->Messages = $messages;   
+}
 
-public function viewSMS() {
+public function viewSMS(array $info = []) {
     $viewEngine = new viewEngine('View/sendTemplate.php');
+    $viewEngine->attach('info',$info);
     echo $viewEngine->view();
 }
     

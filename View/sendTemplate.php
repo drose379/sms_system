@@ -8,6 +8,7 @@ $HTML = <<< HTML
 <head>
 </head>
 <body>
+    <h1>{$info["error"]}</h1>
     <h4><a href='$Basepath/new/user'>Register</a> to create your own directory</h4>
     <form action = '$Basepath/new/msg' method='POST'>
        Phone Number: <input type='tel' name='tel' /> <br>

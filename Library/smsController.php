@@ -19,7 +19,7 @@ public function run() {
         echo "Sent";
     } catch (\Exception $e) {
         $display = new displayForm; #Re direct back to the SMS form with error message if validator throws
-        $display->viewSMS();
+        $display->viewSMS(['error' => $e->getMessage()]); # Pass the method the exceptions error message.
     }
 }
     
