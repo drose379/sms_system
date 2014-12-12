@@ -12,7 +12,7 @@ public function __construct() {
 }
   
 public function loadRoutes() {
- $this->routes = ["/" => [new Library\displayForm,"view"], "/new/msg" => [new Library\processSMS,"run"]];
+ $this->routes = ["/" => [new Library\displayForm,"viewSMS"], "/new/msg" => [new Library\smsController,"run"]];
 }
   
 public function match($path) {

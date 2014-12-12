@@ -5,8 +5,13 @@ use drose379\View\viewEngine;
 
 class displayForm {
 
-public function view() {
+public function viewSMS() {
     $viewEngine = new viewEngine('View/sendTemplate.php');
+    echo $viewEngine->view();
+}
+    
+public function viewRegister() {
+    $viewEngine = new viewEngine('View/registerForm.php');
     echo $viewEngine->view();
 }
     

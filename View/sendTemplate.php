@@ -8,6 +8,7 @@ $HTML = <<< HTML
 <head>
 </head>
 <body>
+    <h4><a href='$Basepath/new/user'>Register</a> to create your own directory</h4>
     <form action = '$Basepath/new/msg' method='POST'>
        Phone Number: <input type='tel' name='tel' /> <br>
        Please select recipients carrier: <select name='carrier'>
