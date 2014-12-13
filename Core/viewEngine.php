@@ -1,6 +1,6 @@
 <?php
 
-namespace drose379\View;
+namespace drose379\Core;
 
 class viewEngine {
 	protected $Template = '';

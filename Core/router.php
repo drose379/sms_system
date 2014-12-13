@@ -1,6 +1,6 @@
 <?php
 
-namespace drose379;
+namespace drose379\Core;
 
 class router {
     
@@ -12,7 +12,7 @@ public function __construct() {
 }
   
 public function loadRoutes() {
- $this->routes = ["/" => [new Library\displayForm,"viewSMS"], "/new/msg" => [new Library\smsController,"run"]];
+ $this->routes = ["/" => [new displayForm,"viewSMS"], "/new/msg" => [new \drose379\SMS\smsController,"run"]];
 }
   
 public function match($path) {

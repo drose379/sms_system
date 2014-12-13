@@ -1,6 +1,6 @@
 <?php
 
-namespace drose379\Library;
+namespace drose379\SMS;
 
 class sms {
     

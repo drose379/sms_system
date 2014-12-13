@@ -1,7 +1,7 @@
 <?php
 
-namespace drose379\Library;
-use drose379\View\viewEngine;
+namespace drose379\Core;
+use drose379\Core\viewEngine;
 
 class displayForm {
     
@@ -10,13 +10,13 @@ public function addMessage($message) {
 }
 
 public function viewSMS(array $info = []) {
-    $viewEngine = new viewEngine('View/sendTemplate.php');
+    $viewEngine = new viewEngine('SMS/sendTemplate.php');
     $viewEngine->attach('info',$info);
     echo $viewEngine->view();
 }
     
 public function viewRegister() {
-    $viewEngine = new viewEngine('View/registerForm.php');
+    $viewEngine = new viewEngine('SMS/registerForm.php');
     echo $viewEngine->view();
 }
     
