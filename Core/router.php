@@ -12,7 +12,7 @@ public function __construct() {
 }
   
 public function loadRoutes() {
- $this->routes = ["/" => [new displayForm,"viewSMS"], "/new/msg" => [new \drose379\SMS\smsController,"run"]];
+ $this->routes = ["/" => [new displayForm,"viewSMS"], "/new/msg" => [new \drose379\SMS\smsController,"run"], "/new/user" => [new                                                displayForm,"viewRegister"], "/register/user" => [new \drose379\UserSystem\registerController,"run"]];
 }
   
 public function match($path) {
