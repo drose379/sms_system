@@ -9,22 +9,7 @@ protected $gateways = ["Verizon" => "vtext.com","Sprint" => "messaging.sprintpcs
     
 public function __construct($data) {
     $this->userInfo = $data;
-    $this->keysFilled();
-}
-    
-public function getKeys() {
-    $arrayKeys = array_keys($this->userInfo);
-    return $arrayKeys;
-}
-
-#Must be called inside a try{} block.
-public function keysFilled() {
-    $keys = $this->getKeys();
-    foreach ($keys as $key) {
-        if (empty($this->userInfo[$key])) {
-            throw new \Exception ("Fill in all fields.");
-        }
-    }
+    \drose379\Base\baseClass::keysFilled($this->userInfo);
 }
     
 public function match() {

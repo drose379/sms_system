@@ -21,21 +21,7 @@ protected $userInfo = [];
     
 public function __construct($userData) {
     $this->userInfo = $userData;
-    $this->keysFilled();
-}
-    
-public function getKeys() {
-    $arrayKeys = array_keys($this->userInfo);
-    return $arrayKeys;
-}
-
-public function keysFilled() {
-    $keys = $this->getKeys();
-    foreach ($keys as $key) {
-        if (empty($this->userInfo[$key])) {
-            throw new \Exception ("Fill in all fields.");
-        }
-    }
+    \drose379\Base\baseClass::keysFilled($this->userInfo);
 }
     
 public function getHash() {

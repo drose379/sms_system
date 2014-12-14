@@ -18,7 +18,7 @@ public function run() {
         $register = new register($this->userInfo);
         $register->insert();
         echo "Inserted"; #TESTING ONLY
-        #CALL TO A LOG IN VIEW
+        #!!!CALL TO A LOG IN VIEW!!!
     }
     catch (\Exception $e) {
         echo $e->getMessage(); 
