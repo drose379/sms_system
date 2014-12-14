@@ -10,9 +10,14 @@ public function __construct() {
   #LoadRoutes method will add pattern/action to the routes array.
   $this->LoadRoutes();
 }
+    
+public function DBconnect() {
+    $connection = new \PDO ('mysql:host=localhost;dbname=smsSystem','root','root');
+    return $connection;
+}
   
 public function loadRoutes() {
- $this->routes = ["/" => [new displayForm,"viewSMS"], "/new/msg" => [new \drose379\SMS\smsController,"run"], "/new/user" => [new                                                displayForm,"viewRegister"], "/register/user" => [new \drose379\Register\registerController,"run"]];
+ $this->routes = ["/" => [new displayForm,"viewSMS"], "/new/msg" => [new \drose379\SMS\smsController,"run"], "/new/user" => [new                                                displayForm,"viewRegister"], "/register/user" => [new \drose379\Register\registerController($this->DBconnect()),"run"]];
 }
   
 public function match($path) {

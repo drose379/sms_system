@@ -44,7 +44,7 @@ public function getEmail() {
     return $email;
 }
 
-public function insert() {
+public function insert($connection) {
     $FirstName = $this->getFirstName();
     $LastName = $this->getLastName();
     $Email = $this->getEmail();
@@ -53,8 +53,7 @@ public function insert() {
     $ValueArray = [$FirstName,$LastName,$Email,$Hash];
     
     #insert above values into DB after making connection.
-    $Connection = \drose379\Base\baseClass::getConnection();
-    $stmt = $Connection->prepare("INSERT INTO users (FirstName,LastName,Email,Password) VALUES (?,?,?,?)");
+    $stmt = $connection->prepare("INSERT INTO users (FirstName,LastName,Email,Password) VALUES (?,?,?,?)");
     $stmt->execute($ValueArray);
 }
 

@@ -19,9 +19,4 @@ public static function keysfilled($array) {
     }
 }
     
-#DATABASE     
-public static function getConnection() {
-  return new \PDO ('mysql:host=localhost;dbname=smsSystem','root','root');
-}
-    
 }
