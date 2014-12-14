@@ -11,11 +11,11 @@
 *   - DO NOT PROGRAM UNTIL ALL METHODS ARE PLANNED OUT
 */
 
-namespace drose379\UserSystem;
+namespace drose379\Register;
 
 class register {
     
-protected $PDOconnection;
+#protected $PDOconnection;
  
 protected $userInfo = [];
     
@@ -43,18 +43,7 @@ public function getEmail() {
     $email = $this->userInfo["email"];
     return $email;
 }
-    
-public function setConnection() {
-    $this->PDOconnection = new \PDO ('mysql:host=localhost;dbname=smsSystem','root','root');
-}
-    
-public function getConnection() {
-    if (! $this->PDOconnection instanceof PDO) {
-        $this->setConnection();   
-    }
-    return $this->PDOconnection;
-}
-    
+
 public function insert() {
     $FirstName = $this->getFirstName();
     $LastName = $this->getLastName();
@@ -64,7 +53,7 @@ public function insert() {
     $ValueArray = [$FirstName,$LastName,$Email,$Hash];
     
     #insert above values into DB after making connection.
-    $Connection = $this->getConnection();
+    $Connection = \drose379\Base\baseClass::getConnection();
     $stmt = $Connection->prepare("INSERT INTO users (FirstName,LastName,Email,Password) VALUES (?,?,?,?)");
     $stmt->execute($ValueArray);
 }

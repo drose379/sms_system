@@ -3,7 +3,8 @@
 namespace drose379\Base;
 
 class baseClass {
- 
+    
+#VALIDATION 
 public static function getKeys($array) {
     $arrayKeys = array_keys($array);
     return $arrayKeys;
@@ -16,6 +17,11 @@ public static function keysfilled($array) {
             throw new \Exception ("Fill in all fields.");
         } 
     }
+}
+    
+#DATABASE     
+public static function getConnection() {
+  return new \PDO ('mysql:host=localhost;dbname=smsSystem','root','root');
 }
     
 }

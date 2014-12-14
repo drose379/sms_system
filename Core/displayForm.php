@@ -16,7 +16,7 @@ public function viewSMS(array $info = []) {
 }
     
 public function viewRegister() {
-    $viewEngine = new viewEngine('UserSystem/registerForm.php');
+    $viewEngine = new viewEngine('Register/registerForm.php');
     echo $viewEngine->view();
 }
     

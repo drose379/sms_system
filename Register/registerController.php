@@ -2,8 +2,8 @@
 
 #Call methods from the register action class.
 
-namespace drose379\UserSystem;
-use drose379\UserSystem\register;
+namespace drose379\Register;
+use drose379\Register\register;
 
 class registerController {
 
