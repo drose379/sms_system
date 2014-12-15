@@ -20,4 +20,9 @@ public function viewRegister() {
     echo $viewEngine->view();
 }
     
+public function viewLogin() {
+    $viewEngine = new viewEngine('Login/loginForm.php');
+    echo $viewEngine->view();
+}
+    
 }
