@@ -11,18 +11,8 @@ public function __construct($userInfo) {
     \drose379\Base\baseClass::keysFilled($this->userInfo);
 }
 
-public function getEnteredEmail() {
-    $email = $this->userInfo["email"];
-    return $email;
-}
-
-public function getEnteredPassword() {
-    $password = $this->userInfo["password"];
-    return $password;
-}
-
 public function checkEmail($connection) {
-    $enteredEmail = $this->getEnteredEmail();
+    $enteredEmail = $this->userInfo["email"];
     $stmt = $connection->prepare("SELECT email FROM users WHERE email = :enteredEmail");
     $stmt->bindParam(':enteredEmail',$enteredEmail);
     $stmt->execute();
@@ -33,13 +23,12 @@ public function checkEmail($connection) {
 }
 
 public function checkPassword($connection) {
-    $enteredPassword = $this->getEnteredPassword();
     $stmt = $connection->prepare("SELECT password FROM users WHERE email = :enteredEmail");
-    $stmt->bindParam(':enteredEmail',$this->getEnteredEmail());
+    $stmt->bindParam(':enteredEmail',$this->userInfo["email"]);
     $stmt->execute();
     $result = $stmt->fetch();
     
-    if (!password_verify($this->getEnteredPassword(),$result["password"])) {
+    if (!password_verify($this->userInfo["password"],$result["password"])) {
         throw new \Exception("Incorrect pass");  
     }
 }
