@@ -17,6 +17,7 @@ public function run() {
         $address = $SMS->build($gateway); # Use the gateway to build an address to mail to
         $SMS->send($address); # Send the message
         echo "Sent";
+        if (empty($this->userInfo)) {echo "empty";}
     } catch (\Exception $e) {
         $display = new \drose379\Core\displayForm; #Re direct back to the SMS form with error message if validator throws
         $display->viewSMS(['error' => $e->getMessage()]); # Pass the method the exceptions error message.

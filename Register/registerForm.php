@@ -8,6 +8,8 @@ $HTML = <<< HTML
 <head>
 </head>
 <body>
+    <h4>Please register before sending messages</h4>
+    <h4>If you have already registered, <a href='$BasePath/loginscreen'>please sign in</a></h4>
     <form action = '$BasePath/register/user' method = 'POST'>
         First Name: <input type='text' name='firstName'> <br>
         Last Name: <input type='text' name='lastName'> <br>

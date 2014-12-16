@@ -19,8 +19,8 @@ public function run() {
     try {
         $register = new register($this->userInfo);
         $register->insert($this->PDOconnection);
-        echo "Inserted"; #TESTING ONLY
-        #!!!CALL TO A LOG IN VIEW!!!
+        #echo "Inserted"; #TESTING ONLY
+        header('Location:'.headerPath.'/loginscreen');
     }
     catch (\Exception $e) {
         echo $e->getMessage(); 

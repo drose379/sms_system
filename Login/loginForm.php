@@ -8,6 +8,7 @@ $HTML = <<< HTML
 <head>
 </head>
 <body>
+    <h4>Login:</h4>
     <form action = '$BasePath/login/' method = 'POST'>
         Email: <input type='email' name='email'> <br>
         Password: <input type='password' name='password'> <br>

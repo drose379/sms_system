@@ -11,11 +11,16 @@ public static function getKeys($array) {
 }
     
 public static function keysfilled($array) {
-    $keys = self::getKeys($array);
-    foreach ($keys as $key) {
-        if (empty($array[$key])) {
-            throw new \Exception ("Fill in all fields.");
-        } 
+    if (!empty($array)) {
+        $keys = self::getKeys($array);
+        foreach ($keys as $key) {
+            if (empty($array[$key])) {
+                throw new \Exception ("Fill in all fields.");
+            } 
+        }
+    }
+    else {
+        throw new \Exception ("No faulty requests");   
     }
 }
     

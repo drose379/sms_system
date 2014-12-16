@@ -10,7 +10,7 @@ $HTML = <<< HTML
 <body>
     <h1>{$info["error"]}</h1>
     <h4><a href='$Basepath/new/user'>Register</a> to create your own directory</h4>
-    <form action = '$Basepath/new/msg' method='POST'>
+    <form action = '$Basepath/send/msg' method='POST'>
        Phone Number: <input type='tel' name='tel' /> <br>
        Please select recipients carrier: <select name='carrier'>
             <option value='Verizon'>Verizon</option>
