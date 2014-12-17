@@ -15,13 +15,15 @@ public function viewSMS(array $info = []) {
     echo $viewEngine->view();
 }
     
-public function viewRegister() {
+public function viewRegister(array $info = []) {
     $viewEngine = new viewEngine('Register/registerForm.php');
+    $viewEngine->attach('info',$info);
     echo $viewEngine->view();
 }
     
-public function viewLogin() {
+public function viewLogin(array $info = []) {
     $viewEngine = new viewEngine('Login/loginForm.php');
+    $viewEngine->attach('info',$info);
     echo $viewEngine->view();
 }
     

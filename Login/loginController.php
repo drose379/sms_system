@@ -23,10 +23,11 @@ public function run() {
         #Have a method inside login class that calls a header with a piece of user info (Last name, email) 
         #Call it from here (controller)
         #For now, go to sms screen, CREATE A LOGGED IN USER PAGE
-        header('Location:'.headerPath.'/new/msg');
+        header('Location:'.headerPath.'/user/'.$this->userInfo["email"]);
     }
     catch (\Exception $e) { 
-        echo $e->getMessage();   
+        $display = new \drose379\Core\displayForm; #Re direct back to the SMS form with error message if validator throws
+        $display->viewLogin(['error' => $e->getMessage()]); # Pass the method the exceptions error message.   
     }
 }
     

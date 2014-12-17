@@ -1,5 +1,6 @@
 <?php
 
+#USE FILTER_VAR TO VALIDATE EMAIL
 #Call methods from the register action class.
 
 namespace drose379\Register;
@@ -23,7 +24,8 @@ public function run() {
         header('Location:'.headerPath.'/loginscreen');
     }
     catch (\Exception $e) {
-        echo $e->getMessage(); 
+        $display = new \drose379\Core\displayForm; #Re direct back to the SMS form with error message if validator throws
+        $display->viewRegister(['error' => $e->getMessage()]); # Pass the method the exceptions error message.
     }
 }
 }
