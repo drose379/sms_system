@@ -12,8 +12,8 @@ public function __construct($connection) {
 }
     
 public function setSessions() {
-    $_SESSION["loggedIn"] = "1";
-    $_SESSION["user"] = $this->user;
+    #session_start();
+    #$_SESSION["user"] = $this->user;
 }
     
 public function run($params) {
