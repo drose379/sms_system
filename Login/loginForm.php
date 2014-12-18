@@ -11,7 +11,7 @@ $HTML = <<< HTML
     <h4>Login:</h4>
     <h4>{$info["error"]}</h4>
     <form action = '$BasePath/login/' method = 'POST'>
-        Email: <input type='email' name='email'> <br>
+        Username: <input type='text' name='username'> <br>
         Password: <input type='password' name='password'> <br>
             <input type='submit'>
     </form>

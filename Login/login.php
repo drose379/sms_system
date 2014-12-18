@@ -11,20 +11,20 @@ public function __construct($userInfo) {
     \drose379\Base\baseClass::keysFilled($this->userInfo);
 }
 
-public function checkEmail($connection) {
-    $enteredEmail = $this->userInfo["email"];
-    $stmt = $connection->prepare("SELECT email FROM users WHERE email = :enteredEmail");
-    $stmt->bindParam(':enteredEmail',$enteredEmail);
+public function checkUsername($connection) {
+    $username = $this->userInfo["username"];
+    $stmt = $connection->prepare("SELECT username FROM users WHERE username = :username");
+    $stmt->bindParam(':username',$username);
     $stmt->execute();
     $result = $stmt->fetch();
     if (!$result) {
-        throw new \Exception("Email not found.");
+        throw new \Exception("Username not found.");
     }
 }
 
 public function checkPassword($connection) {
-    $stmt = $connection->prepare("SELECT password FROM users WHERE email = :enteredEmail");
-    $stmt->bindParam(':enteredEmail',$this->userInfo["email"]);
+    $stmt = $connection->prepare("SELECT password FROM users WHERE username = :username");
+    $stmt->bindParam(':username',$this->userInfo["username"]);
     $stmt->execute();
     $result = $stmt->fetch();
     

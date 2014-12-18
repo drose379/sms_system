@@ -15,7 +15,7 @@ public function __construct($connection) {
 public function run() {
     try {
         $login = new login($this->userInfo);
-        $login->checkEmail($this->PDOconnection);
+        $login->checkUsername($this->PDOconnection);
         #Password check only runs if email is correct
         $login->checkPassword($this->PDOconnection);
         #echo "Pass!";
@@ -23,7 +23,7 @@ public function run() {
         #Have a method inside login class that calls a header with a piece of user info (Last name, email) 
         #Call it from here (controller)
         #For now, go to sms screen, CREATE A LOGGED IN USER PAGE
-        header('Location:'.headerPath.'/user/'.$this->userInfo["email"]);
+        header('Location:'.headerPath.'/user/'.$this->userInfo["username"]);
     }
     catch (\Exception $e) { 
         $display = new \drose379\Core\displayForm; #Re direct back to the SMS form with error message if validator throws

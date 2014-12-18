@@ -27,4 +27,12 @@ public function viewLogin(array $info = []) {
     echo $viewEngine->view();
 }
     
+public function viewUserHome(array $info = []) {
+    $viewEngine = new viewEngine('User/userHomeTemplate.php');
+    $viewEngine->attach('info',$info);
+    $viewEngine->attach('test',$_SESSION["user"]);
+    echo $viewEngine->view();
+}
+
+    
 }

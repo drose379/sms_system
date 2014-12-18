@@ -26,7 +26,7 @@ $this->routes = [
     "/loginscreen" => [new displayform(),"viewLogin"], 
     "/login/" => [new \drose379\Login\loginController($this->DBconnect()),"run"],
     #Subpattern regex: [] === character class. ^ (inside a char class) === not. + === 1 or more.
-    "/user/(?<email>[^/]+)" => [/*new user controller*/],
+    "/user/(?<user>[^/]+)" => [new \drose379\User\userController($this->DBconnect()),"run"],
 ];
 }
   
@@ -39,8 +39,8 @@ public function match($path) {
 }
   
 public function run($path) {
-  list($action,$params) = $this->match($path);
-  $action($params);
+    list($action,$params) = $this->match($path);
+    $action($params);
 }
     
 }

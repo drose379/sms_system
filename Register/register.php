@@ -39,6 +39,11 @@ public function getLastName() {
     return $Name;
 }
     
+public function getUsername() {
+    $username = $this->userInfo["username"];
+    return $username;
+}
+    
 public function getEmail() {
     $email = $this->userInfo["email"];
     return $email;
@@ -47,13 +52,14 @@ public function getEmail() {
 public function insert($connection) {
     $FirstName = $this->getFirstName();
     $LastName = $this->getLastName();
+    $Username = $this->getUsername();
     $Email = $this->getEmail();
     $Hash = $this->getHash();
     
-    $ValueArray = [$FirstName,$LastName,$Email,$Hash];
+    $ValueArray = [$FirstName,$LastName,$Username,$Email,$Hash];
     
     #insert above values into DB after making connection.
-    $stmt = $connection->prepare("INSERT INTO users (FirstName,LastName,Email,Password) VALUES (?,?,?,?)");
+    $stmt = $connection->prepare("INSERT INTO users (FirstName,LastName,Username,Email,Password) VALUES (?,?,?,?,?)");
     $stmt->execute($ValueArray);
 }
 

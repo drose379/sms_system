@@ -8,7 +8,11 @@ $HTML = <<< HTML
 <head>
 </head>
 <body>
-#Display user info here.
+<h4>You are logged in as</h4>
+{$info["firstname"]} {$info["lastname"]}
+<hr>
+<p><a href='$BasePath/new/msg'>Send a message</a></p>
+<p>My contacts</p>
 </body>
 </html>
     
